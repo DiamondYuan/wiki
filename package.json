@@ -1,0 +1,13 @@
+{
+  "name": "wiki",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.com:DiamondYuan/wiki.git",
+  "author": "Diamondyuan <admin@diamondyuan.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "load": "sh script/load.sh",
+    "unload": "sh script/unload.sh"
+  }
+}

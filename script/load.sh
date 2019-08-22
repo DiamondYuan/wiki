@@ -9,7 +9,7 @@ cat >wiki.plist <<EOF
         <string>wiki</string>
         <key>ProgramArguments</key>
         <array>
-                <string>/usr/local/bin/node</string>
+                <string>/Users/diamondyuan/.nvm/versions/node/v12.6.0/bin/node</string>
                 <string>${basepath}/index.js</string>
         </array>
         <key>RunAtLoad</key>

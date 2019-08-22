@@ -1,0 +1,10 @@
+{
+  "name": "wiki",
+  "builds": [{ "src": "*.html", "use": "@now/static" }],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/TiddlyWiki.html"
+    }
+  ]
+}

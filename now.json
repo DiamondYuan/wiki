@@ -1,6 +1,7 @@
 {
   "name": "wiki",
   "builds": [{ "src": "*.html", "use": "@now/static" }],
+  "alias": ["wiki.yfd.im"],
   "routes": [
     {
       "src": "/(.*)",

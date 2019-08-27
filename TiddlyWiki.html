@@ -406,6 +406,8 @@ Error message and password prompt
 
 <li>列出 crontab 文件</li>
 
+<li>浏览器编码和解码 base64</li>
+
 <li>命令行上传文件</li>
 
 <li>排版很好的在线 sicp</li>
@@ -14070,7 +14072,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div created="20190711065431514" modified="20190711065434253" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
 </div>
-<div list="[[排版很好的在线 sicp]] About" title="$:/StoryList">
+<div list="[[浏览器编码和解码 base64]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20171122093616449" modified="20180320043700476" title="$:/temp/advancedsearch">
@@ -14886,6 +14888,17 @@ defaults write -g CGFontRenderingFontSmoothingDisabled -bool Yes
 </div>
 <div created="20180306063037689" modified="20180306063103483" tags="crontab" title="列出 crontab 文件">
 <pre>`crontab -l`</pre>
+</div>
+<div created="20190827101654510" modified="20190827101805577" tags="" title="浏览器编码和解码 base64">
+<pre>```
+function utf8_to_b64(str) {
+  return window.btoa(unescape(encodeURIComponent(str)))
+}
+
+function b64_to_utf8(str) {
+  return decodeURIComponent(escape(window.atob(str)))
+}
+```</pre>
 </div>
 <div created="20180309090604849" modified="20180309090613584" tags="" title="命令行上传文件">
 <pre>https://transfer.sh/</pre>

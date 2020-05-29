@@ -1,3 +1,4 @@
 .DS_Store
 wiki.plist
 node_modules
+script/start.sh

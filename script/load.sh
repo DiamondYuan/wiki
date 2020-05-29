@@ -1,6 +1,5 @@
 ## basepath 为项目所在的目录
 basepath=$(dirname $(cd `dirname $0`; pwd))
-WIKI_NODE_PATH=$(which node)
 
 cat >wiki.plist <<EOF
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -10,8 +9,8 @@ cat >wiki.plist <<EOF
         <string>wiki</string>
         <key>ProgramArguments</key>
         <array>
-                <string>${WIKI_NODE_PATH}</string>
-                <string>${basepath}/index.js</string>
+                <string>/bin/bash</string>
+                <string>${basepath}/script/start.sh</string>
         </array>
         <key>RunAtLoad</key>
         <true/>

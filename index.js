@@ -49,17 +49,13 @@ fs.watch(watchDir, function (_, filename) {
   if (filename !== watchFileName) {
     return;
   }
-  fs.exists(watchFilepath, function (exise) {
-    console.log("exit");
-    if (!exise) {
-      return;
-    }
-    fs.rename(watchFilepath, rootWikiPath, (err) => {
-      if (!err) {
-        execSync(`/bin/sh ${commitScriptPath}`, () => {});
-      }
-    });
-  });
+  const exist = fs.existsSync(watchFilepath);
+  if (!exist) {
+    return;
+  }
+  console.log("copy file");
+  fs.renameSync(watchFilepath, rootWikiPath);
+  execSync(`/bin/sh ${commitScriptPath}`, () => {});
 });
 
 console.log(`wiki watch ${watchDir} now`);

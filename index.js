@@ -1,15 +1,15 @@
-const fs = require('fs');
-const http = require('http');
-const execSync = require('child_process').execSync;
-const path = require('path');
+const fs = require("fs");
+const http = require("http");
+const execSync = require("child_process").execSync;
+const path = require("path");
 
-const watchFileName = 'TiddlyWiki.html';
-const watchDir = path.resolve(process.env.HOME, 'Downloads');
+const watchFileName = "TiddlyWiki.html";
+const watchDir = path.resolve(process.env.HOME, "Downloads");
 const watchFilepath = path.resolve(watchDir, watchFileName);
 const root = path.dirname(__filename);
 const serverPort = 8848;
 const rootWikiPath = path.resolve(root, watchFileName);
-const commitScriptPath = path.resolve(root, 'script', 'commit.sh');
+const commitScriptPath = path.resolve(root, "script", "commit.sh");
 
 const config = {
   watchFileName,
@@ -21,17 +21,22 @@ const config = {
   commitScriptPath,
 };
 
-console.log(`current config \n ${JSON.stringify(config, null, '\t')}\n`);
+console.log(`current config \n ${JSON.stringify(config, null, "\t")}\n`);
 
 http
-  .createServer(function(req, res) {
+  .createServer(function (req, res) {
     if (req.url !== `/${watchFileName}`) {
-      res.writeHead(302, { Location: `http://127.0.0.1:${serverPort}/${watchFileName}` });
+      res.writeHead(302, {
+        Location: `http://127.0.0.1:${serverPort}/${watchFileName}`,
+      });
       res.end();
       return;
     }
-    fs.readFile(rootWikiPath, function(_, data) {
-      res.writeHead(200, { 'Content-Type': 'text/html', 'Content-Length': data.length });
+    fs.readFile(rootWikiPath, function (_, data) {
+      res.writeHead(200, {
+        "Content-Type": "text/html",
+        "Content-Length": data.length,
+      });
       res.write(data);
       res.end();
     });
@@ -40,15 +45,16 @@ http
 
 console.log(`wiki start at http://127.0.0.1:${serverPort}/${watchFileName}`);
 
-fs.watch(watchDir, function(_, filename) {
+fs.watch(watchDir, function (_, filename) {
   if (filename !== watchFileName) {
     return;
   }
-  fs.exists(watchFilepath, function(exise) {
+  fs.exists(watchFilepath, function (exise) {
+    console.log("exit");
     if (!exise) {
       return;
     }
-    fs.rename(watchFilepath, rootWikiPath, err => {
+    fs.rename(watchFilepath, rootWikiPath, (err) => {
       if (!err) {
         execSync(`/bin/sh ${commitScriptPath}`, () => {});
       }

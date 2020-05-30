@@ -9,6 +9,8 @@ const result = execSync("which node", {
   .toString()
   .split("\n")[0];
 
+console.log(result);
+
 const content = `${result} ${index}`;
 
 writeFileSync(start, content);

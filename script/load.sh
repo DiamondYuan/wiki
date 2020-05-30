@@ -5,6 +5,10 @@ cat >wiki.plist <<EOF
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+        <key>StandardErrorPath</key>
+        <string>${basepath}/wiki.err</string>
+        <key>StandardOutPath</key>
+        <string>${basepath}/wiki.out</string>
         <key>Label</key>
         <string>wiki</string>
         <key>ProgramArguments</key>

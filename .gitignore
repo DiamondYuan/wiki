@@ -2,3 +2,5 @@
 wiki.plist
 node_modules
 script/start.sh
+wiki.err
+wiki.out

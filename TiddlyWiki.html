@@ -473,6 +473,8 @@ Error message and password prompt
 
 <li>化妆品查询生产日期</li>
 
+<li>回滚 commit</li>
+
 <li>解决 Mojave 字体过细问题</li>
 
 <li>禁用搜索最小字数限制</li>
@@ -15816,7 +15818,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[npm dist-tag]] About" title="$:/StoryList">
+<div list="[[回滚 commit]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200531033551710" modified="20200531033551710" title="$:/temp/HidePluginWarning">
@@ -17123,6 +17125,11 @@ ufw disable
 </div>
 <div created="20181014163011644" modified="20181014163028961" tags="" title="化妆品查询生产日期">
 <pre>http://checkcosmetic.net/news/</pre>
+</div>
+<div created="20200612130336202" modified="20200612130355781" tags="" title="回滚 commit">
+<pre>```
+git revert --no-commit HEAD~3..
+```</pre>
 </div>
 <div created="20180926015543595" modified="20180926015658188" tags="" title="解决 Mojave 字体过细问题">
 <pre>```

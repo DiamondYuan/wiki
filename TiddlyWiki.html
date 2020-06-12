@@ -15818,7 +15818,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[回滚 commit]] About" title="$:/StoryList">
+<div created="20200612130608334" list="[[回滚 commit]] About" modified="20200612130608334" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200531033551710" modified="20200531033551710" title="$:/temp/HidePluginWarning">
@@ -17126,9 +17126,22 @@ ufw disable
 <div created="20181014163011644" modified="20181014163028961" tags="" title="化妆品查询生产日期">
 <pre>http://checkcosmetic.net/news/</pre>
 </div>
-<div created="20200612130336202" modified="20200612130355781" tags="" title="回滚 commit">
-<pre>```
-git revert --no-commit HEAD~3..
+<div created="20200612130336202" modified="20200612130723938" tags="" title="回滚 commit">
+<pre>A -&gt; B -&gt; C -&gt; D -&gt; HEAD 如果要回滚 B C D
+
+!!! 方法 1
+
+```
+$ git revert --no-commit HEAD~3..
+```
+
+!!! 方法 2
+
+```
+$ git revert --no-commit D
+$ git revert --no-commit C
+$ git revert --no-commit B
+$ git commit -m &quot;the commit message&quot;
 ```</pre>
 </div>
 <div created="20180926015543595" modified="20180926015658188" tags="" title="解决 Mojave 字体过细问题">

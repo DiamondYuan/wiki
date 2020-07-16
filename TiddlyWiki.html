@@ -771,6 +771,8 @@ Error message and password prompt
 
 <li>sideidea</li>
 
+<li>SSL 公私钥生成</li>
+
 <li>strace</li>
 
 <li>String Manipulation</li>
@@ -15838,7 +15840,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200709025158246" list="代码搜索中文 About" modified="20200709025158246" title="$:/StoryList">
+<div list="[[SSL 公私钥生成]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200531033551710" modified="20200531033551710" title="$:/temp/HidePluginWarning">
@@ -15889,11 +15891,11 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1792&quot;
+            &quot;text&quot;: &quot;1680&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1120&quot;
+            &quot;text&quot;: &quot;1050&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -19508,6 +19510,51 @@ page.evaluate(function(arg1, arg2){
 <pre>&quot;独立开发者/远程工作者&quot; 盈利案例
 
 http://sideidea.com/</pre>
+</div>
+<div created="20200716182157529" modified="20200716182316898" tags="" title="SSL 公私钥生成" type="text/x-markdown">
+<pre>**生成公钥私钥**
+
+使用命令生成私钥:
+
+```
+openssl genrsa -out rsa_private_key.pem 1024
+```
+
+参数:genrsa 生成密钥   -out 输出到文件  rsa\_private\_key.pem 文件名  1024 长度
+
+从私钥中提取公钥:
+
+```
+openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
+```
+
+参数: rsa 提取公钥  -in 从文件中读入  rsa\_private\_key.pem 文件名   -pubout  输出   -out 到文件  rsa\_public\_key.pem  文件名
+
+**shell加解密**
+
+新建一个readme.txt 内容是taoshihan
+
+使用公钥加密:
+
+```
+openssl rsautl -encrypt -in readme.txt -inkey rsa_public_key.pem -pubin -out hello.en
+```
+
+参数: rsautl 加解密  -encrypt 加密  -in 从文件输入  readme.txt 文件名  -inkey  输入的密钥  rsa\_public\_key.pem  上一步生成的公钥  -pubin 表名输入是公钥文件  -out输出到文件  hello.en 输出文件名
+
+使用私钥解密:
+
+```
+openssl rsautl -decrypt -in hello.en -inkey rsa_private_key.pem -out hello.de
+```
+
+参数: -decrypt 解密  -in 从文件输入 hello.en 上一步生成的加密文件  -inkey 输入的密钥 rsa\_private\_key.pem 上一步生成的私钥  -out输出到文件  hello.de 输出的文件名
+
+
+```
+cat hello.de // taoshihan
+```
+</pre>
 </div>
 <div created="20180226122818215" modified="20180226122827366" tags="" title="strace">
 <pre>strace</pre>

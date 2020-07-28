@@ -745,6 +745,8 @@ Error message and password prompt
 
 <li>Nginx 重启</li>
 
+<li>No Xcode or CLT version detected! 问题解决</li>
+
 <li>Node.js 获取 IP</li>
 
 <li>Node.js 子进程断点</li>
@@ -15842,7 +15844,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[Node.js 获取 IP]] About" title="$:/StoryList">
+<div list="[[No Xcode or CLT version detected! 问题解决]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200531033551710" modified="20200531033551710" title="$:/temp/HidePluginWarning">
@@ -15893,11 +15895,11 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1680&quot;
+            &quot;text&quot;: &quot;1792&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1050&quot;
+            &quot;text&quot;: &quot;1120&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -16859,7 +16861,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200531033506665" modified="20200531033720630" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>markdown</pre>
 </div>
-<div created="20200601032014057" modified="20200621122726505" title="$:/temp/search">
+<div created="20200601032014057" modified="20200728081843727" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20200531033722755" modified="20200531033722755" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
@@ -19420,6 +19422,12 @@ location / {
 <div created="20171129091414556" modified="20171129091504440" tags="Nginx" title="Nginx 重启">
 <pre>```
 nginx -s reload
+```</pre>
+</div>
+<div created="20200728081845775" modified="20200728082015513" tags="" title="No Xcode or CLT version detected! 问题解决">
+<pre>```
+sudo rm -rf $(xcode-select -print-path)
+xcode-select --install
 ```</pre>
 </div>
 <div created="20200715030955155" modified="20200715031033876" tags="" title="Node.js 获取 IP">

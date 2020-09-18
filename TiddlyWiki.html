@@ -609,6 +609,8 @@ Error message and password prompt
 
 <li>Git 删除 master 以外分支</li>
 
+<li>git 指定 ssh private key</li>
+
 <li>git branch 不显示在新的一页</li>
 
 <li>git tags</li>
@@ -15846,7 +15848,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[lerna 发布测试版本]] About" title="$:/StoryList">
+<div list="[[git 指定 ssh private key]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200531033551710" modified="20200531033551710" title="$:/temp/HidePluginWarning">
@@ -15897,11 +15899,11 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1792&quot;
+            &quot;text&quot;: &quot;1680&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1120&quot;
+            &quot;text&quot;: &quot;1050&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -17828,6 +17830,9 @@ git remote prune origin
 <pre>```
 git stash &amp;&amp; git checkout master &amp;&amp; git branch | grep -v &quot;master&quot; | xargs git branch -D
 ```</pre>
+</div>
+<div created="20200918155904298" modified="20200918155921011" tags="" title="git 指定 ssh private key">
+<pre>GIT_SSH_COMMAND=&quot;ssh -i ~/.ssh/id_rsa_example&quot; git clone example</pre>
 </div>
 <div created="20180923024039423" modified="20180923024717531" tags="" title="git branch 不显示在新的一页">
 <pre>```

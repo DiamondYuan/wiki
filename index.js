@@ -10,7 +10,6 @@ const root = path.dirname(__filename);
 const serverPort = 8848;
 const rootWikiPath = path.resolve(root, watchFileName);
 const commitScriptPath = path.resolve(root, "script", "commit.sh");
-
 const config = {
   watchFileName,
   watchDir,
@@ -25,9 +24,13 @@ console.log(`current config \n ${JSON.stringify(config, null, "\t")}\n`);
 
 http
   .createServer(function (req, res) {
-    execSync(`git pull`, {
-      cwd: path.join(__filename, '..')
-    })
+    if (!execSync("git status", {
+      cwd: root
+    }).toString().includes("Your branch is up to date with")) {
+      execSync(`git pull`, {
+        cwd: root
+      })
+    }
     if (req.url !== `/${watchFileName}`) {
       res.writeHead(302, {
         Location: `http://127.0.0.1:${serverPort}/${watchFileName}`,

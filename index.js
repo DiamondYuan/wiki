@@ -25,6 +25,9 @@ console.log(`current config \n ${JSON.stringify(config, null, "\t")}\n`);
 
 http
   .createServer(function (req, res) {
+    execSync(`git pull`, {
+      cwd: join(__filename, '..')
+    })
     if (req.url !== `/${watchFileName}`) {
       res.writeHead(302, {
         Location: `http://127.0.0.1:${serverPort}/${watchFileName}`,
@@ -55,7 +58,7 @@ fs.watch(watchDir, function (_, filename) {
   }
   console.log("copy file");
   fs.renameSync(watchFilepath, rootWikiPath);
-  execSync(`/bin/sh ${commitScriptPath}`, () => {});
+  execSync(`/bin/sh ${commitScriptPath}`, () => { });
 });
 
 console.log(`wiki watch ${watchDir} now`);

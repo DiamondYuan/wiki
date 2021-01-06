@@ -26,7 +26,7 @@ console.log(`current config \n ${JSON.stringify(config, null, "\t")}\n`);
 http
   .createServer(function (req, res) {
     execSync(`git pull`, {
-      cwd: join(__filename, '..')
+      cwd: path.join(__filename, '..')
     })
     if (req.url !== `/${watchFileName}`) {
       res.writeHead(302, {

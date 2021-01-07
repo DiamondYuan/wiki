@@ -615,6 +615,8 @@ Error message and password prompt
 
 <li>git branch 不显示在新的一页</li>
 
+<li>git tag</li>
+
 <li>git tags</li>
 
 <li>github contributions</li>
@@ -15858,7 +15860,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[github contributions]] About" title="$:/StoryList">
+<div list="[[git tag]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200531033551710" modified="20200531033551710" title="$:/temp/HidePluginWarning">
@@ -17851,6 +17853,44 @@ git stash &amp;&amp; git checkout master &amp;&amp; git branch | grep -v &quot;m
 <pre>```
 git config --global pager.branch false
 ```</pre>
+</div>
+<div created="20210107025930223" modified="20210107030055793" tags="" title="git tag" type="text/x-markdown">
+<pre>OK, You can simply do:
+
+```
+git tag -a &lt;tag&gt; &lt;commit-hash&gt;
+
+```
+
+So if you want to add **tag:** 1.0.2 to commit `e50f795`, just simply do:
+
+```
+git tag -a 1.0.2 e50f795
+
+```
+
+Also you **add a message** at the end, using `-m`, something like this:
+
+```
+git tag -a 1.0.2 e50f795 -m &quot;my message&quot;
+
+```
+
+After all, you need to push it to the `remote`, to do that, simply do:
+
+```
+git push origin 1.0.2 
+
+```
+
+If you have many tags which you don't want to mention them one by one, just simply do:
+
+```
+git push origin --tags
+
+```
+
+to push all tags together</pre>
 </div>
 <div created="20190225070136002" modified="20190225070225763" tags="Git" title="git tags">
 <pre>!! 推送 tag 到远端

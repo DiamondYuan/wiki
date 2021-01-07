@@ -30,6 +30,9 @@ http
       execSync(`git pull`, {
         cwd: root
       })
+      execSync(`git push`, {
+        cwd: root
+      })
     }
     if (req.url !== `/${watchFileName}`) {
       res.writeHead(302, {

@@ -751,6 +751,8 @@ Error message and password prompt
 
 <li>macOS 同时使用有线耳机和蓝牙耳机</li>
 
+<li>Markdown 语法</li>
+
 <li>Monorepos</li>
 
 <li>MyBatis使用注解实现in查询</li>
@@ -15874,7 +15876,7 @@ exports[&quot;text/x-markdown&quot;] = MarkdownParser;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="临时邮箱 About" title="$:/StoryList">
+<div list="[[Markdown 语法]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200531033551710" modified="20200531033551710" title="$:/temp/HidePluginWarning">
@@ -19454,6 +19456,174 @@ lsof -i :port
 # 点击 多输出设备 可以重新设置名字。
 
 # 在设置 / 声音 / 输出 栏选择刚才创建的设备。</pre>
+</div>
+<div created="20210121162341416" modified="20210121162413626" tags="" title="Markdown 语法" type="text/x-markdown">
+<pre># Heading
+
+## Heading level 2
+
+### Heading level 3
+
+#### Heading level 4
+
+##### Heading level 5
+
+###### Heading level 6
+
+---
+
+# Table
+
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+## Alignment
+
+| Syntax    | Description |   Test Text |
+| :-------- | :---------- | ----------: |
+| Header    | Title       | Here's this |
+| Paragraph | Text        |    And more |
+
+---
+
+# Lists
+
+## Ordered Lists
+
+1. First item
+2. Second item
+3. Third item
+   1. Indented item
+   2. Indented item
+4. Fourth item
+
+## Unordered Lists
+
+- First item
+- Second item
+- Third item
+- Fourth item
+
+---
+
+# Emphasis
+
+## Delete
+
+~double tildes around the words~.
+
+## Blod
+
+I just love **bold text**.
+
+## Italic
+
+Italicized text is the _cat's meow_.
+
+## Bold and Italic
+
+This text is **really important**.
+
+This is really**very**important text.
+
+---
+
+# Blockquotes
+
+&gt; Dorothy followed her through many of the beautiful rooms in her castle.
+
+## Nested Blockquotes
+
+&gt; Dorothy followed her through many of the beautiful rooms in her castle.
+&gt;
+&gt; &gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+## Blockquotes with Other Elements
+
+&gt; #### The quarterly results look great!
+&gt;
+&gt; - Revenue was off the chart.
+&gt; - Profits were higher than ever.
+&gt;
+&gt;   _Everything_ is going according to **plan**.
+
+---
+
+# Code
+
+## Inline
+
+`Hello` World
+
+## Syntax Highlighting
+
+### json
+
+```json
+{
+  &quot;firstName&quot;: &quot;John&quot;,
+  &quot;lastName&quot;: &quot;Smith&quot;,
+  &quot;age&quot;: 25
+}
+```
+
+### diff
+
+```diff
+-- packageA/
+++ packageA
+```
+
+---
+
+# Emoji
+
+Gone camping! :tent: Be back soon.
+
+That is so funny! :joy:
+
+---
+
+# Image
+
+![ Philadelphia's Magic Gardens. This place was so cool! ](https://d33wubrfki0l68.cloudfront.net/eab45e25bb79970178fab7a2d10cba0209372a59/94d9e/assets/images/philly-magic-garden.jpg)
+
+---
+
+# Link
+
+## Formatting Links
+
+I love supporting the **[EFF](https://eff.org)**.
+
+This is the _[Markdown Guide](https://www.markdownguide.org)_.
+
+See the section on [`code`](#code).
+
+---
+
+# Math
+
+When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
+
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+
+$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+
+## multiline
+
+$
+\begin{aligned}
+y_j \sim N(\theta_j , \sigma_j^2) \\
+\sigma_j = \nu/\sqrt{n_j}   \\
+\theta = \mu +\tau \times \eta \\
+\eta \sim N(0,1) \\
+\mu + \tau\times\eta = \theta \sim N(\mu , \tau^2)
+\end{aligned}
+$
+</pre>
 </div>
 <div created="20210119022456500" modified="20210119022511049" tags="" title="Monorepos">
 <pre>https://github.com/nrwl/nx/</pre>
